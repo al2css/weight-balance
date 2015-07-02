@@ -1,0 +1,10 @@
+/**
+ * Controller: EmailCtrl
+ */
+angular.module('WeightBalanceApp')
+  .controller('EmailCtrl',
+    function EmailCtrl ( ) {
+      'use strict';
+      
+      this.title = "Loading...";
+    });

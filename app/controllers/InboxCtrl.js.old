@@ -1,0 +1,10 @@
+/**
+ * Controller: InboxCtrl
+ */
+angular.module('WeightBalanceApp')
+  .controller('InboxCtrl',
+    function InboxCtrl ( ) {
+      'use strict';
+
+      this.title = "My Inbox";
+    });

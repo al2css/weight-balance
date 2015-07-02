@@ -1,0 +1,39 @@
+<div class="menu" id="menu" data-ng-include="'app/partials/_menu.html'"></div>
+
+<div class="inside_page my_flights" ng-show="myFlights.flights.assigned_flights.length"> 
+	<div class="title"><h1>Your schedule for <b>{{ myFlights.flights.login_date * 1000 | date:'MMM d, y HH:mm' | uppercase }} - {{ myFlights.flights.logout_date * 1000 | date:'MMM d, y HH:mm' | uppercase }}</b></h1></div>
+
+	<div class="pageis all_assigned_flights">
+		
+		<div class="flight my_list" ng-repeat="assignedflights in myFlights.flights.assigned_flights | orderBy:'departing_time'">
+			<h2><span>{{ assignedflights.from_code }} - {{ assignedflights.to_code }} <a href="javascript:;" ng-click="removeFlight(assignedflights, myFlights.flights.assigned_flights)" title="" class="remove_flight">Remove</a></span></h2>
+			
+			<p><b>{{ assignedflights.flight_code }}</b> landing to {{ assignedflights.to_code }} {{ assignedflights.landing_time * 1000 | date:'MMM d, y HH:mm' }}</p>
+			<p class="size1"><b>{{ assignedflights.subtype }}</b></p>
+			
+			<p><b>Departing {{ assignedflights.departing_time * 1000 | date:'MMM d, y HH:mm' }}</b></p>
+			<p><b>{{ assignedflights.passenger_booked }}</b> Passengers Booked</p>
+			
+			<a href="javascript:;" title="See Flight" class="see_flight_button" ng-class="{'checkin_not_opened' : !assignedflights.check_in_open}" ng-click="goToFlight(assignedflights.id, assignedflights.check_in_open);">See Flight</a>
+			
+			<div class="checkin_status" ng-class="{'open' : assignedflights.check_in_open, 'not_opened' : !assignedflights.check_in_open}">
+				<p>CHECK-IN</p>
+				<p class="status">{{ assignedflights.check_in_status }}</p>
+			</div>
+
+			<div class="clear"></div>
+		</div>
+
+		<div class="clear"></div>
+	</div>
+
+	<div class="clear"></div>
+</div>
+
+<div class="inside_page my_flights error" ng-show="!myFlights.flights.assigned_flights.length">
+	<div class="pageis all_assigned_flights">
+		<div class="title"><b>No flights assigned!</b></div>
+	</div>
+</div>
+
+<div class="flightsRoadmap" id="flightsRoadmap" data-ng-include="'app/partials/_flightsRoadmap.html'"></div>

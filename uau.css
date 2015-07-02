@@ -1,0 +1,782 @@
+.csstransforms3d .book-loading-overlay-symbol {
+    -webkit-animation: block;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateZ(30deg);
+}
+
+.csstransforms3d .book-loading-overlay-symbol .picto {
+    -webkit-animation: book-loading-overlay-animation-3d 3s infinite linear;
+}
+
+@-webkit-keyframes book-loading-overlay-animation-2d {
+    0% {
+        -moz-transform: scale(0.5) rotate(0deg) translate(0, -260px);
+        -ms-transform: scale(0.5) rotate(0deg) translate(0, -260px);
+        -webkit-transform: scale(0.5) rotate(0deg) translate(0, -260px);
+        transform: scale(0.5) rotate(0deg) translate(0, -260px);
+    }
+    100% {
+        -moz-transform: scale(0.5) rotate(360deg) translate(0, -260px);
+        -ms-transform: scale(0.5) rotate(360deg) translate(0, -260px);
+        -webkit-transform: scale(0.5) rotate(360deg) translate(0, -260px);
+        transform: scale(0.5) rotate(360deg) translate(0, -260px);
+    }
+}
+
+@-moz-keyframes book-loading-overlay-animation-2d {
+    0% {
+        -moz-transform: scale(0.5) rotate(0deg) translate(0, -260px);
+        -ms-transform: scale(0.5) rotate(0deg) translate(0, -260px);
+        -webkit-transform: scale(0.5) rotate(0deg) translate(0, -260px);
+        transform: scale(0.5) rotate(0deg) translate(0, -260px);
+    }
+    100% {
+        -moz-transform: scale(0.5) rotate(360deg) translate(0, -260px);
+        -ms-transform: scale(0.5) rotate(360deg) translate(0, -260px);
+        -webkit-transform: scale(0.5) rotate(360deg) translate(0, -260px);
+        transform: scale(0.5) rotate(360deg) translate(0, -260px);
+    }
+}
+
+@-ms-keyframes book-loading-overlay-animation-2d {
+    0% {
+        -moz-transform: scale(0.5) rotate(0deg) translate(0, -260px);
+        -ms-transform: scale(0.5) rotate(0deg) translate(0, -260px);
+        -webkit-transform: scale(0.5) rotate(0deg) translate(0, -260px);
+        transform: scale(0.5) rotate(0deg) translate(0, -260px);
+    }
+    100% {
+        -moz-transform: scale(0.5) rotate(360deg) translate(0, -260px);
+        -ms-transform: scale(0.5) rotate(360deg) translate(0, -260px);
+        -webkit-transform: scale(0.5) rotate(360deg) translate(0, -260px);
+        transform: scale(0.5) rotate(360deg) translate(0, -260px);
+    }
+}
+
+@keyframes book-loading-overlay-animation-2d {
+    0% {
+        -moz-transform: scale(0.5) rotate(0deg) translate(0, -260px);
+        -ms-transform: scale(0.5) rotate(0deg) translate(0, -260px);
+        -webkit-transform: scale(0.5) rotate(0deg) translate(0, -260px);
+        transform: scale(0.5) rotate(0deg) translate(0, -260px);
+    }
+    100% {
+        -moz-transform: scale(0.5) rotate(360deg) translate(0, -260px);
+        -ms-transform: scale(0.5) rotate(360deg) translate(0, -260px);
+        -webkit-transform: scale(0.5) rotate(360deg) translate(0, -260px);
+        transform: scale(0.5) rotate(360deg) translate(0, -260px);
+    }
+}
+
+@-webkit-keyframes book-loading-overlay-animation-3d {
+    0% {
+        -webkit-transform: scale3d(0.5, 0.5, 0.5) rotateY(0deg) translateZ(220px);
+    }
+    50% {
+        opacity: 0.1;
+        -webkit-transform: scale3d(0.5, 0.5, 0.5) rotateY(180deg) translateZ(220px);
+    }
+    100% {
+        -webkit-transform: scale3d(0.5, 0.5, 0.5) rotateY(360deg) translateZ(220px);
+    }
+}
+
+@font-face {
+    font-family: "swiss-piktos";
+    src: url("../fonts/swiss-piktos.eot");
+    src: url("../fonts/swiss-piktos.eot?#iefix") format("embedded-opentype"), url("../fonts/swiss-piktos.svg#swiss-piktos") format("svg"), url("../fonts/swiss-piktos.woff?3") format("woff"), url("../fonts/swiss-piktos.ttf?3") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.picto,
+.picto-block {
+    position: relative;
+    padding: 0 15px;
+}
+
+.picto:after,
+.picto-block:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: -15px;
+    font-family: "swiss-piktos";
+    font-size: 30px;
+    color: #47423f;
+    content: attr(data-icon);
+    text-align: left;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none !important;
+    speak: none;
+    display: inline-block;
+    text-decoration: none;
+    width: 30px;
+    line-height: 1em;
+    -webkit-font-smoothing: antialiased;
+}
+
+.picto {
+    display: inline;
+    display: -webkit-inline-box;
+    min-height: 1ex;
+    max-height: 1em;
+    letter-spacing: -1ex;
+    text-decoration: none;
+}
+
+.picto:before {
+    content: '';
+}
+
+.cssreflections .picto:before {
+    content: '\00a0';
+    letter-spacing: -1ex;
+}
+
+html.html-loading .picto:after {
+    content: none !important;
+}
+
+.picto-block {
+    display: inline-block;
+    vertical-align: middle;
+    letter-spacing: -1ex;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    max-height: none;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.picto-medium {
+    padding: 0 22px;
+}
+
+.picto-medium:after {
+    width: 44px;
+    height: 44px;
+    margin-left: -22px;
+    margin-top: -22px;
+    font-size: 44px;
+}
+
+.picto-block.picto-medium {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+}
+
+.picto-large {
+    padding: 0 30px;
+}
+
+.picto-large:after {
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    font-size: 60px;
+}
+
+.picto-block.picto-large {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+}
+
+.picto-gray:after {
+    color: #6f6660;
+}
+
+.picto-white:after {
+    color: white;
+}
+/*
+	\.icon\-(.+?)\:before
+	.picto-$1:after
+*/
+/* update pictolist in pictos.haml */
+
+.picto-add-document:after {
+    content: "a";
+}
+
+.picto-airport:after {
+    content: "b";
+}
+
+.picto-arrival:after {
+    content: "c";
+}
+
+.picto-arrival-service:after {
+    content: "d";
+}
+
+.picto-arrow-left:after {
+    content: "e";
+}
+
+.picto-arrow-right:after {
+    content: "f";
+}
+
+.picto-at-the-airport:after {
+    content: "g";
+}
+
+.picto-baggage:after {
+    content: "h";
+}
+
+.picto-beverage:after {
+    content: "i";
+}
+
+.picto-bicycle:after {
+    content: "j";
+}
+
+.picto-booking:after {
+    content: "k";
+}
+
+.picto-bookmarklet:after {
+    content: "l";
+}
+
+.picto-bookmarklet-2:after {
+    content: "m";
+}
+
+.picto-copyright-information:after {
+    content: "n";
+}
+
+.picto-contact:after {
+    content: "o";
+}
+
+.picto-conditions-of-carriage:after {
+    content: "p";
+}
+
+.picto-cold-meal:after {
+    content: "q";
+}
+
+.picto-clock:after {
+    content: "r";
+}
+
+.picto-breakfast:after {
+    content: "s";
+}
+
+.picto-bus:after {
+    content: "t";
+}
+
+.picto-calendar:after {
+    content: "u";
+}
+
+.picto-car-rental:after {
+    content: "v";
+}
+
+.picto-car-rental-pick-up:after {
+    content: "w";
+}
+
+.picto-car-rental-return:after {
+    content: "x";
+}
+
+.picto-check-in:after {
+    content: "y";
+}
+
+.picto-check-list:after {
+    content: "z";
+}
+
+.picto-document-checked:after {
+    content: "A";
+}
+
+.picto-disclaimer:after {
+    content: "B";
+}
+
+.picto-desktop:after {
+    content: "C";
+}
+
+.picto-departure:after {
+    content: "D";
+}
+
+.picto-currency:after {
+    content: "E";
+}
+
+.picto-crew:after {
+    content: "F";
+}
+
+.picto-credit-card:after {
+    content: "G";
+}
+
+.picto-create-profile:after {
+    content: "H";
+}
+
+.picto-fleet:after {
+    content: "I";
+}
+
+.picto-flexibility:after {
+    content: "J";
+}
+
+.picto-flight:after {
+    content: "K";
+}
+
+.picto-flight-history:after {
+    content: "L";
+}
+
+.picto-flight-information:after {
+    content: "M";
+}
+
+.picto-flight-status:after {
+    content: "N";
+}
+
+.picto-frequent-flyer:after {
+    content: "O";
+}
+
+.picto-fullscreen:after {
+    content: "P";
+}
+
+.picto-globe:after {
+    content: "Q";
+}
+
+.picto-hairdryer:after {
+    content: "R";
+}
+
+.picto-hand-baggage:after {
+    content: "S";
+}
+
+.picto-hot-meal:after {
+    content: "T";
+}
+
+.picto-hot-meal-a-la-carte:after {
+    content: "U";
+}
+
+.picto-favorite:after {
+    content: "V";
+}
+
+.picto-edit:after {
+    content: "W";
+}
+
+.picto-double-page:after {
+    content: "X";
+}
+
+.picto-dog:after {
+    content: "Y";
+}
+
+.picto-documents:after {
+    content: "Z";
+}
+
+.picto-men:after {
+    content: "0";
+}
+
+.picto-mobile:after {
+    content: "1";
+}
+
+.picto-mobile-service:after {
+    content: "2";
+}
+
+.picto-more-options:after {
+    content: "3";
+}
+
+.picto-multi-city:after {
+    content: "4";
+}
+
+.picto-medical-service:after {
+    content: "5";
+}
+
+.picto-meal:after {
+    content: "6";
+}
+
+.picto-lounge:after {
+    content: "7";
+}
+
+.picto-information:after {
+    content: "8";
+}
+
+.picto-immigration:after {
+    content: "9";
+}
+
+.picto-hotel-check-out:after {
+    content: "!";
+}
+
+.picto-hotel-check-in:after {
+    content: "\"";
+}
+
+.picto-hotel:after {
+    content: "#";
+}
+
+.picto-multi-course-meal:after {
+    content: "$";
+}
+
+.picto-my-data:after {
+    content: "%";
+}
+
+.picto-news:after {
+    content: "&";
+}
+
+.picto-newsletter:after {
+    content: "'";
+}
+
+.picto-no-baggage:after {
+    content: "(";
+}
+
+.picto-no-baggage-cart:after {
+    content: ")";
+}
+
+.picto-no-smoking:after {
+    content: "*";
+}
+
+.picto-note:after {
+    content: "+";
+}
+
+.picto-notes-and-safety:after {
+    content: ",";
+}
+
+.picto-on-board:after {
+    content: "-";
+}
+
+.picto-online-check-in:after {
+    content: ".";
+}
+
+.picto-open-email:after {
+    content: "/";
+}
+
+.picto-option-additional-baggage:after {
+    content: ":";
+}
+
+.picto-option-hold-my-booking:after {
+    content: ";";
+}
+
+.picto-passenger-child:after {
+    content: "<";
+}
+
+.picto-passenger-adult:after {
+    content: "=";
+}
+
+.picto-outbound:after {
+    content: ">";
+}
+
+.picto-option-voucher:after {
+    content: "?";
+}
+
+.picto-option-upgrade-farefamily:after {
+    content: "@";
+}
+
+.picto-option-upgrade-2:after {
+    content: "[";
+}
+
+.picto-option-upgrade:after {
+    content: "]";
+}
+
+.picto-option-seat-selection:after {
+    content: "^";
+}
+
+.picto-option-meal-selection:after {
+    content: "_";
+}
+
+.picto-option-insurance:after {
+    content: "`";
+}
+
+.picto-passport:after {
+    content: "{";
+}
+
+.picto-passenger-information:after {
+    content: "|";
+}
+
+.picto-phone:after {
+    content: "}";
+}
+
+.picto-pilot:after {
+    content: "~";
+}
+
+.picto-privacy-statement:after {
+    content: "\\";
+}
+
+.picto-return:after {
+    content: "\e000";
+}
+
+.picto-round-trip:after {
+    content: "\e001";
+}
+
+.picto-route-network:after {
+    content: "\e002";
+}
+
+.picto-sandwich:after {
+    content: "\e003";
+}
+
+.picto-search:after {
+    content: "\e004";
+}
+
+.picto-services:after {
+    content: "\e005";
+}
+
+.picto-settings:after {
+    content: "\e006";
+}
+
+.picto-shower:after {
+    content: "\e007";
+}
+
+.picto-passenger-infant:after {
+    content: "\e008";
+}
+
+.picto-passenger-group:after {
+    content: "\e009";
+}
+
+.picto-timetable:after {
+    content: "\e00a";
+}
+
+.picto-toilet:after {
+    content: "\e00b";
+}
+
+.picto-terms-and-conditions:after {
+    content: "\e00c";
+}
+
+.picto-technical-service:after {
+    content: "\e00d";
+}
+
+.picto-table-of-contents:after {
+    content: "\e00e";
+}
+
+.picto-special-surprise:after {
+    content: "\e00f";
+}
+
+.picto-special-seat:after {
+    content: "\e010";
+}
+
+.picto-social-media:after {
+    content: "\e011";
+}
+
+.picto-snack-sweet:after {
+    content: "\e012";
+}
+
+.picto-snack-salted:after {
+    content: "\e013";
+}
+
+.picto-snack-business:after {
+    content: "\e014";
+}
+
+.picto-smallscreen:after {
+    content: "\e015";
+}
+
+.picto-single-page:after {
+    content: "\e016";
+}
+
+.picto-toilet-disabled:after {
+    content: "\e017";
+}
+
+.picto-train:after {
+    content: "\e018";
+}
+
+.picto-train-arrival:after {
+    content: "\e019";
+}
+
+.picto-travel-partner:after {
+    content: "\e01a";
+}
+
+.picto-unaccompanied-minors:after {
+    content: "\e01b";
+}
+
+.picto-winglet:after {
+    content: "\e01c";
+}
+
+.picto-woman:after {
+    content: "\e01d";
+}
+
+.picto-weather-bedeckt:after {
+    content: "\e01e";
+}
+
+.picto-weather-bewoelkt:after {
+    content: "\e01f";
+}
+
+.picto-weather-gewitter:after {
+    content: "\e020";
+}
+
+.picto-weather-nebel:after {
+    content: "\e021";
+}
+
+.picto-weather-regen:after {
+    content: "\e022";
+}
+
+.picto-weather-regenschauer:after {
+    content: "\e023";
+}
+
+.picto-weather-schneefall:after {
+    content: "\e024";
+}
+
+.picto-weather-sonnig:after {
+    content: "\e025";
+}
+
+.picto-weather-spruehregen:after {
+    content: "\e026";
+}
+
+.picto-weather-wolkig:after {
+    content: "\e027";
+}
+
+.picto-plane-arrival:after {
+    content: "\e028";
+}
+
+.picto-plane-departure:after {
+    content: "\e029";
+}
+
+.picto-temperature:after {
+    content: "\e02a";
+}
+
+.pictocontainer-left {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+}
+
+.pictocontainer-left .picto {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pictocontainer-right {
+    display: block;
+    position: relative;
+    padding-right: 38px;
+}
+
+.pictocontainer-right .picto {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.pictocontainer-middle .picto {
+    top: 50%;
+    margin-top: -15px;
+}

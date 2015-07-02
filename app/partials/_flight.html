@@ -1,0 +1,44 @@
+<div class="menu" id="menu" data-ng-include="'app/partials/_menu.html'"></div>
+
+<div class="inside_page one_flight"> 
+	<section class="title"><h1>Flight from date <strong>{{ flight.reqFlight.flight_schedule.departure_time * 1000 | date:'MMM d, y HH:mm' | uppercase }}</strong></h1></section>
+
+	<div class="pageis flight_details">
+		<section class="title"><strong>{{ flight.reqFlight.flight_schedule.origin }} - {{ flight.reqFlight.flight_schedule.destination }}</strong></section>
+		<p>Departure time: <strong>{{ flight.reqFlight.flight_schedule.departure_time * 1000 | date:'MMM d, y HH:mm' }}</strong></p>
+		<p>Landing time: <strong>{{ flight.reqFlight.flight_schedule.arrival_time * 1000 | date:'MMM d, y HH:mm' }}</strong></p>
+		<p>Passengers: <strong>{{ flight.reqFlight.deadload.passengers_forecasted }} / {{ flight.reqFlight.deadload.passengers_checked_in }}</strong></p>
+		<p>Forecasted: <strong>{{ flight.reqFlight.deadload.baggage_forecasted }} / {{ flight.reqFlight.deadload.baggage_estimated }} / {{ flight.reqFlight.deadload.baggage_checked_in }}</strong></p>
+
+		<div class="clear"></div>
+	</div>	
+
+	<div class="clear"></div>
+
+
+	<!-- AIRCRAFT START -->
+	<div class="aircraft">
+		<div class="working_area">
+			<ul class="select_deck"><li ng-repeat="link in flight.reqFlight.lower_deck_layout.tabs"><a href="#{{ link }}" title="{{ link }}">{{ link }}</a></li></ul>
+
+			<div class="axis"></div>
+			<!-- lower-deck DIRECTIVE -->
+			<lower-deck></lower-deck>
+
+			<div class="clear"></div>
+
+			<div class="clear"></div>
+		</div>
+
+		<div class="clear"></div>
+	</div>
+	<!-- AIRCRAFT END -->
+
+	<!-- uld DIRECTIVE -->
+	<uld></uld>
+	<div class="clear"></div>
+
+
+	<div class="clear"></div>
+</div>
+

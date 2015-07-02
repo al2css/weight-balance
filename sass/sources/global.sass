@@ -1,0 +1,1737 @@
+// Main application stylesheet file
+// @version 1.0
+
+$max_width: 1900px
+$min_width: 1280px
+
+$aircraft_width: 1200px
+$aircraft_height: 200px
+
+// breakpoints
+$phone: 767px !default
+$tablet: 1024px !default
+$pc: 1280px !default
+$pc_huge: 1450px !default
+
+$menu_orange: #f39c12
+$menu_green: #00ae4a
+$menu_red: #c0392b
+$menu_blue: #2c3e50
+$menu_gray: #898787
+$menu_light_blue: #f39c12
+
+$gray_title: #353535
+
+
+$border_color: #ddd
+
+$default_red: #c0392b
+$default_black: #1e1e1c
+
+$draggable_width: 100
+$draggable_height: 100
+$dropzone_height: 700
+
+// IMPORTS ===============================
+@import common/base.sass
+@import common/reset.sass
+
+// Modules
+.mobileonly
+	:display none
+	:visibility hidden
+.hide
+	:display none
+	:visibility hidden
+	+opacity(0)
+.hidden
+	:visibility hidden
+
+.clearfix:before,
+.clearfix:after
+	:content " "
+	:display table
+.clearfix:after 
+	:clear both
+.clearfix
+	:zoom 1
+	:*zoom 1
+.clear
+	:clear both
+	:display block
+	:width 100%
+	:line-height 0px
+	:height 0px
+	:padding 0 !important
+	:margin 0 !important
+.bold, strong
+	:font-weight 700 !important
+.center
+	:text-align center !important
+.caps
+	:text-transform uppercase
+
+.muiemica
+	:display flex
+	:float left
+
+html
+	:width 100%
+	:height 100%
+
+body
+	:font-family $open-sans
+	// :font-family $varela-round
+	// :font-family $lato
+	:font-weight 300
+	:color $default_black
+	:background-color #FFF
+	:font-size 100%
+	:height 100%
+	:width 100%
+	+media-query(phone)
+		:font-size 80%
+	+media-query(tablet)
+		:font-size 90%
+	+media-query(pc)
+		:font-size 100%
+	+media-query(pc_huge)
+		:font-size 100%
+
+a
+	:color $default_black
+	:outline none
+	+media-query(phone)
+	:text-decoration none
+
+	&:hover, &:visited, &:focus, &:active
+		:outline none
+		:text-decoration none
+
+img
+	:max-width 100%
+	:vertical-align middle
+	:border 0
+	:outline none
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill
+	// :background-color white !important
+	:background-color rgb(250, 255, 189) !important
+
+textarea
+	:resize none
+
+
+
+form
+	:width 100%
+	:float left
+	:text-align left
+	:padding 0
+	:margin 0
+	:display block
+	:border 0px none
+
+textarea, input[type="text"], input[type="number"], input[type="password"], input[type="submit"], input[type="email"], input[type="tel"], button, , input[type="file"], input[type="number"], input[type="url"]
+	:outline none !important
+
+a
+	:text-decoration none
+	:outline none
+	+unselectable
+	:color #1d1d1b
+
+h1,h2,h3,h4,h5,h6,p
+	:line-height 150%
+	:margin-bottom 10px
+	:width 100%
+	:display block
+	:float left
+	:text-align left
+	:font-weight 300
+
+h1
+	:margin-bottom 10px
+
+ul, ul li
+	:list-style none
+
+// *, *::before, *::after
+	// +border_box
+
+
+html, body, button 
+	:-webkit-font-smoothing antialiased
+	:font-smoothing antialiased
+
+button
+	:border 0px none
+	:outline none
+	:cursor pointer
+
+input[type="submit"]
+	:outline none
+	:cursor pointer
+
+div
+	:display block
+	:text-align left
+	:padding 0
+	:margin 0
+
+body
+	#site
+		:width 100%
+		:height 100%
+		:max-width $max_width !important
+		:min-width $min_width !important
+		:clear both
+		:padding 0
+		:margin 0 auto
+		:display block
+		// :background
+		// 	:color transparent
+		// 	:image image_url(unquote("accelaero_aeroline_bg.jpg"))
+		// 	:repeat no-repeat
+		// 	:position 80% top
+		:position relative
+		:z-index 1000
+		:-webkit-backface-visibility hidden
+		:-moz-backface-visibility hidden
+		:-ms-backface-visibility hidden
+		:-o-backface-visibility hidden
+		:backface-visibility hidden
+		+unselectable
+
+		.remove_flight
+			:display none
+			:position absolute
+			:top -10px
+			:right -40px
+			:text-align left
+			:text-indent -5000em
+			:width 24px
+			:height 24px
+			:background
+				// :color rgba(255,255,255,0.1)
+				:image image_url(unquote("close_buttons.png"))
+				:repeat no-repeat
+				:position 0 -24px*1
+			+radius(3px)
+
+			&:hover
+				:background-position 0 -24px*2
+
+		.title
+			:float left
+			:width 100%
+			:padding 0
+			:margin 20px 0 30px 0
+			:clear both
+			+border_box
+			:padding 0 10px
+			:color $default_black
+			:font-size 1.4em
+			:font-weight 300
+
+			b
+				:font-weight 700
+
+			h1,h2,h3,h4,h5
+				:margin 0
+
+		.content
+			:float left
+			:width 100%
+			:clear both
+			:padding 0
+			:margin 0
+			:display block
+			// :overflow hidden
+			:height 100%
+			:position relative
+			// +transition(all 0.2s ease-in)
+			
+			.flightsRoadmap
+				:float left
+				:width 100%
+				:clear both
+				:margin 0
+				+border_box
+				:padding 0px
+				:background
+					:color rgba(247, 239, 241, 0.9)
+				:height 80px
+				:position fixed
+				:bottom 0
+				:left 0
+				:z-index 100
+
+				.timespan
+					:position absolute
+					:top 0
+					:left 0
+					:width 100%
+					:height 100%
+					:z-index 1
+					:text-align left
+
+					&> div
+						:float left
+						:text-align left
+						:padding 0
+						:margin 0
+						:display inline-block
+						:height 100%
+						:position relative
+						:width 8.3333%
+						:background
+							:color transparent
+						+transition(all 0.2s ease-in)
+
+						&:hover
+							&> span
+								+scale(1.5)
+								:font-weight 700
+
+						&.current_hour
+							:background
+								:color rgba(190, 89, 27, 0.1)
+
+						&> span
+							:position absolute
+							:top 3px
+							:left 10px
+							:font-weight 500 !important
+							:font-size 0.7em
+							:color black
+							:color rgba(0,0,0,0.4)
+							:text-shadow 0px 1px 0px rgba(255, 255, 255, 0.8)
+							+transition(all 0.2s ease-in)
+						
+						&> q
+							:display block
+							:position absolute
+							:width 1px
+							:height 100%
+							:left 0
+							:top 0
+							:bottom 0
+							:box-shadow 1px 0px 0px rgba(255,255,255,0.2)
+							:background
+								:color rgba(0,0,0,0.1)
+							+unselectable
+
+				.roadmap
+					:float left
+					// :position relative
+					:position absolute
+					:bottom 0px
+					:left 0px
+					:z-index 10
+					:text-align left
+					:padding 25px 0 0 0
+					:margin 0
+					:height 100%
+					:width 100%
+					+prepare_animation
+					:-webkit-animation-name bounceIn
+					:-moz-animation-name bounceIn
+					:-ms-animation-name bounceIn
+					:-o-animation-name bounceIn
+					:animation-name bounceIn
+					// :-webkit-animation-delay 1s
+					// :-moz-animation-delay 1s
+					// :-ms-animation-delay 1s
+					// :-o-animation-delay 1s
+					// :animation-delay 1s
+					+border_box
+					@for $i from 1 through 24
+						&:nth-child(#{$i})
+							// :z-index 10 + (35 - $i)
+							// :top 45 - (5 * $i)px
+							:-webkit-animation-delay #{$i/10}s
+							:-moz-animation-delay #{$i/10}s
+							:-o-animation-delay #{$i/10}s
+							:-ms-animation-delay #{$i/10}s
+							:animation-delay #{$i/10}s
+
+							// &> h2
+								// :margin-top #{$i*5}px
+
+					&:hover
+						.remove_flight
+							:display block	
+
+					&> q
+						:position absolute
+						:top 25px
+						:bottom 0px
+						:left 0px
+						:z-index 10
+						:width 3px
+						:background
+							:color rgba(0,0,0,0.9)
+
+					&> h2
+						:margin 0
+						:font-size 0.48em
+						:font-weight 700
+						:padding 0 0 0 5px
+						:color black
+						:text-shadow 0px 1px 0px rgba(255, 255, 255, 0.8)
+						:position relative
+						:width 100%
+						:float left
+						:text-align left
+						:z-index 12
+
+						a
+							:position absolute
+							:top 0
+							:left 5px
+							:width 100%
+
+							&.open
+								:color green
+							&.not_opened
+								:color red
+
+						.tooltip
+							:width 250px !important
+
+						.tooltip-inner
+							:max-width 100% !important
+							:width auto !important
+							:text-shadow 0 0 0 rgba(0,0,0,0)
+
+					
+					.remove_flight
+						:bottom 1px
+						:top auto
+						:right auto
+						:left -24px
+						:z-index 8
+						:background-color black
+						:background-color rgba(0,0,0,0.2)
+						// +prepare_animation
+						// :-webkit-animation-name fadeInDown
+						// :-moz-animation-name fadeInDown
+						// :-ms-animation-name fadeInDown
+						// :-o-animation-name fadeInDown
+						// :animation-name fadeInDown
+
+						&:hover
+							:background-position 0 -24px*0
+
+			$menu_height: 55px
+			.menu
+				:float left
+				:width 100%
+				:clear both
+				:margin 0 0 30px 0
+				+border_box
+				:padding 0
+				:height $menu_height
+				:background
+					:color #d7d8d8
+
+
+				.logo
+					:float left
+					:text-align left
+					:width 32px
+					:height $menu_height
+					:text-indent -5000em
+					:margin 0 10px 0 1%
+					:padding 0
+					:background
+						:image image_url(unquote("logo.png"))
+						:repeat no-repeat
+						:position 0 0
+
+				$menu_gray: #9d9b9b
+				.main_menu, .user_area
+					:float left
+					:width auto
+					:padding 0
+					:margin 0 20px
+					:height 100%
+					+border_box
+					:text-align left
+					:position relative
+
+					&> li
+						:display inline-block
+						:float left
+						:position relative
+						:z-index 20
+
+						.submenu
+							:display none
+							:position absolute
+							:top $menu_height
+							:left 0px
+							:width 300px
+							:margin 0
+							:padding 0
+							:height auto
+							:background
+								:color transparent
+							// +prepare_animation
+							// :-webkit-animation-name fadeInDown
+							// :-moz-animation-name fadeInDown
+							// :-ms-animation-name fadeInDown
+							// :-o-animation-name fadeInDown
+							// :animation-name fadeInDown
+
+							li
+								:display block
+								:float left
+								:width 100%
+								:padding 0
+								:margin 0
+
+								.infos
+									:display block
+									:float left
+									:width 100%
+									:padding 10px 15px
+									+border_box
+									:margin 0
+									:color black
+									:text-decoration none
+									:background-color #94c122
+									:text-transform uppercase
+									:font-weight 300
+									:font-size 0.8em
+									:line-height 120%
+									:text-shadow 0 1px 0 rgba(255,255,255,0.4)
+
+									.name, .desc
+										:float left
+										:display inline-block
+										:text-align left
+										:padding 0
+										:margin 0
+
+									.name
+										:width 30%
+
+									.desc
+										:width 70%
+										:font-weight 500
+
+						&> a
+							:padding 0 15px
+							:display inline-block
+							:float left
+							:color #1e1e1c
+							:text-transform uppercase
+							:text-decoration none
+							:font-size 0.8em
+							:font-weight 500
+							:height $menu_height
+							:line-height $menu_height
+							:text-shadow 0 1px 0 rgba(255,255,255,0.3)
+							:position relative
+
+							.module
+								:float right 
+								:width 25px
+								:height $menu_height
+								:line-height $menu_height
+								:display block
+								:text-align center
+								:margin 0 -15px 0 15px
+								:padding 0
+								:background
+									:color $menu_gray
+								:color white
+								:text-shadow 0 0 0 rgba(0,0,0,0)
+								:font-weight bold
+
+								&.messages
+									:background
+										:color rgba(0,0,0,0.5)
+								&.notifications
+									:background
+										:color rgba(0,0,0,0.8)
+								
+								&.cdl
+									:background
+										:color red
+
+								div
+									:width 100%
+									:text-align center
+									:margin 0
+									:padding 0
+
+							&:hover
+								:background
+									:color rgba(0,0,0,0.2)
+								+gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2), unquote("noiz.png"))
+
+						&.current
+							&> a
+								:background
+									:color rgba(0,0,0,0.2)
+								+gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2), unquote("noiz.png"))
+
+						&.cdl
+							.submenu
+								li
+									.infos
+										:color black
+										
+										&:hover
+											:background-color lighten(#94c122, 5%)
+
+							&> a
+								:background-color #94c122
+
+								&:hover
+									:background-color lighten(#94c122, 5%)
+
+							&:hover
+								.submenu
+									:display block
+
+								&> a
+									:background-color lighten(#94c122, 5%)
+									
+				
+				.user_area
+					:float right
+					:text-align left
+					:margin 0 30px 0 0
+					:width auto
+					:border-right 50px solid #1e1e1c
+
+					&> li
+						&> a
+							:text-transform none
+
+							.module
+								:position relative
+
+								q
+									:position absolute
+									:top 50%
+									:left 50%
+									:border 0px none
+									+css_triangle(5px, white, bottom)
+									:margin -5px 0 0 -5px
+
+							&:hover
+								.module
+									q
+										:border 0px none
+										+css_triangle(5px, white, top)
+						.submenu
+							:display none
+							:width 243px
+
+							li
+
+								.infos
+									:background-color $menu_gray
+									:font-weight 500
+
+									&:hover
+										:background-color darken($menu_gray, 9%)
+
+
+						&:hover
+							&> a
+								:background
+									:color rgba(0,0,0,0.2)
+								+gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2), unquote("noiz.png"))
+								
+								.module
+									:background-color darken($menu_gray, 9%)
+
+									q
+										:border 0px none
+										+css_triangle(5px, white, top)
+
+							.submenu
+								:display block
+
+
+			
+			.inside_page, .login_page
+				:float left
+				:width 100%
+				:clear both
+				:padding 0 0 110px 0
+				:margin 0
+				:display block
+				:background
+					:color white
+				:position relative
+				:z-index 10
+				+prepare_animation
+				:-webkit-animation-name fadeInDown
+				:-moz-animation-name fadeInDown
+				:-ms-animation-name fadeInDown
+				:-o-animation-name fadeInDown
+				:animation-name fadeInDown
+
+				// my_flights
+				// .all_assigned_flights, .closest_flights, .all_available_flights, .flight_details
+				.pageis
+					:float left
+					:width 100%
+					:clear both
+					:padding 0
+					:margin 0
+					:text-align left
+					:position relative
+
+					&.error
+						+prepare_animation
+						:-webkit-animation-name bounceIn
+						:-moz-animation-name bounceIn
+						:-ms-animation-name bounceIn
+						:-o-animation-name bounceIn
+						:animation-name bounceIn
+						:background
+							:color red	
+							:color rgba(255, 0, 0, 0.3)
+						+gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3), unquote("noiz.png"))
+						:padding-bottom 0
+
+					&.module
+						&.directive
+
+							&> div
+								:float left
+								:width 100%
+								:clear both
+								:padding 0
+								:margin 0
+								:text-align left
+								:position relative
+
+								.search-bar
+									:float left
+									:width 100%
+									:clear both
+									:padding 0
+									:margin 0
+									:text-align left
+									:position relative
+
+									&> div
+										:float left
+										:position relative
+										:padding 0
+										:margin 0
+									
+										&.inbox__count
+											:float left
+											:width 80%
+
+										&.inbox__search__box
+											:float right
+											:width auto
+											:padding 0 20px
+
+
+								.inbox__list
+									&> li
+										:float left
+										:width 100%
+										:clear both
+										:width 100%
+										:margin 0 0 20px 0
+										:display block
+										:padding 20px
+										+border_box
+
+										&.unread
+											&> div
+												:font-weight 700
+												p
+													:font-weight 700
+
+										&> div
+											:float left
+											:position relative
+											:width 50%
+
+											&.inbox__list-info
+												:float left
+												:width 80%
+											&.inbox__list-actions
+												:float right
+												:width auto
+												:padding 0 20px
+
+										&.no-emails
+											:background
+												:color red
+
+
+					&.closest_flights
+						:margin-bottom 30px
+
+					&.closest_flights, &.all_available_flights
+						.title
+							b
+								:font-weight 700
+
+					.flight
+						:float left
+						:width 20%
+						:padding 20px 20px 130px 20px
+						+border_box
+						:text-align left
+						:margin 0
+						:position relative
+						:color white
+						+prepare_animation
+						:-webkit-animation-name bounceIn
+						:-moz-animation-name bounceIn
+						:-ms-animation-name bounceIn
+						:-o-animation-name bounceIn
+						:animation-name bounceIn
+
+						// @for $i from 1 through 100
+						// 	&:nth-child(#{$i})
+						// 		:-webkit-animation-delay #{$i/100}s
+						// 		:-moz-animation-delay #{$i/100}s
+						// 		:-o-animation-delay #{$i/100}s
+						// 		:-ms-animation-delay #{$i/100}s
+						// 		:animation-delay #{$i/100}s
+
+						
+
+						&.my_list, &.pick_list, &.pick_all_list
+							h2, p
+								:float left
+								:text-align left
+								:padding 0
+								:margin 0 0 5px 0
+								:clear both
+								:width 100%
+								:font-size 0.9em
+								:line-height 120%
+
+							h2
+								:font-weight 500
+								:font-size 1.7em
+								:margin-bottom 25px
+								:position relative
+								:z-index 100
+								:text-transform uppercase
+
+
+								span
+									:float left
+									:width auto
+									:position relative
+
+
+							p
+								&.size1
+									:margin-bottom 15px
+									:font-size 1em
+
+
+
+						&.my_list
+							:height 290px
+
+							&:hover
+								.remove_flight
+									:display block
+
+							&:nth-of-type(even)
+								:background
+									:color #1e1f1d
+								+gradient(#1e1f1d, #1e1f1d, unquote("noiz.png"))
+
+								.see_flight_button
+									:background-color #595756
+
+							&:nth-of-type(odd)
+								:background
+									:color #3d3d3b
+								+gradient(#3d3d3b, #3d3d3b, unquote("noiz.png"))
+
+								.see_flight_button
+									:background-color #1e1e1c
+
+							@for $i from 1 through 3
+								&:nth-of-type(#{$i})
+									:width 33.33%
+									:height 320px
+
+									.checkin_status
+										:left 40px
+
+									h2, p
+										:font-size 1em
+
+									h2
+										:font-size 2em
+										:margin-bottom 30px
+
+									p
+										&.size1
+											:margin-bottom 20px
+											:font-size 1.1em
+
+									.see_flight_button
+										:height 40px
+										:line-height 40px
+										:font-size 1.1em
+
+									.checkin_status
+										p
+											:font-size 0.96em
+
+											&.status
+												:height 40px
+												:line-height 40px
+												:width 130px
+
+										&.open
+											p
+												&.status
+													:font-size 1.1em
+
+										&.not_opened
+											p
+												&.status
+													:font-size 0.86em
+
+							.checkin_status
+								:position absolute
+								:bottom 20px
+								:left 10px
+								:z-index 10
+
+								&.open
+									p
+										&.status
+											:background-color green
+
+								&.not_opened
+									p
+										&.status
+											:font-size 0.75em
+											:background-color red
+
+								p
+									:text-align center
+									:text-transform uppercase
+									:color white
+									:font-size 0.8em
+									:line-height 100%
+									:padding 0
+									:margin 0
+									:font-weight 500
+									:text-shadow 0 1px 0 rgba(0,0,0,0.3)
+
+									&.status
+										:width 110px
+										:height 30px
+										:line-height 30px
+										:margin-top 10px
+										:font-size 0.9em
+
+
+							.see_flight_button
+								:position absolute
+								:bottom 20px
+								:height 30px
+								:line-height 30px
+								:right 0px
+								:z-index 20
+								:font-size 0.9em
+								:color white
+								:padding 0px 20px
+								:background-color #1e1e1c
+								:font-weight 500
+								:text-shadow 0 1px 0 rgba(0,0,0,0.3)
+
+								&.checkin_not_opened
+									+opacity(0.6)
+									:cursor default
+
+									&:hover
+										+opacity(0.6)
+
+								&:hover
+									:text-decoration none
+									+opacity(0.8)
+
+														
+
+
+						&.pick_list
+							:height 280px
+
+							&:nth-of-type(even)
+								:background
+									:color #70706e
+								+gradient(#70706e, #70706e, unquote("noiz.png"))
+
+
+							&:nth-of-type(odd)
+								:background
+									:color #858586
+								+gradient(#858586, #858586, unquote("noiz.png"))
+
+
+							.addtomy_flights_button
+								:background-color #ececec
+								:text-transform uppercase
+								:color #9c9b9b
+								:height 30px
+								:line-height 30px
+								:font-size 0.8em
+								:font-weight 700
+								:padding 0 20px
+								:float left
+								:display block
+								:position absolute
+								:bottom 30px
+								:left 20px
+
+								&:hover
+									:background-color #1e1e1c
+									:color white
+
+
+							// &:hover
+
+
+						&.pick_all_list
+							:background-color white
+							:height 70px
+							:margin-bottom 40px
+							:padding 20px 0
+							:border-left 1px solid #dedddd
+							:width 16.666%
+
+							h2, p
+								:color black
+								:width 100%
+								:padding 0 20px
+								+border_box
+
+							h2
+								:font-size 1.3em
+								:margin 0
+								:line-height 100%
+								:z-index 8
+
+							.departure_time
+								:position absolute
+								:top 17px
+								:right 0
+								:z-index 10
+								:display block
+								:height 26px
+								:line-height 26px
+								:background-color #1e1e1c
+								:color #868686
+								:text-transform uppercase
+								:font-size 0.5em
+								:padding 0 10px
+								:margin 0
+								:float left
+								:font-weight 700
+
+							// &:nth-of-type(odd)
+							// 	:background
+							// 		:color white
+
+
+							// &:nth-of-type(even)
+							// 	:background
+							// 		:color #b1b1b1
+
+							&:hover
+								:background-color #b1b1b1
+								+gradient(#b1b1b1, #b1b1b1, unquote("noiz.png"))
+
+
+							.addtomy_flights_button
+								:background-color #ececec
+								:text-transform uppercase
+								:color #9c9b9b
+								:height 30px
+								:line-height 30px
+								:font-size 0.8em
+								:font-weight 700
+								:padding 0 20px
+								:border-left 1px solid #dedddd
+								:float left
+								:display block
+								:position absolute
+								:bottom -30px
+								:left -1px
+
+								&:hover
+									:background-color #1e1e1c
+									:color white
+
+
+
+
+
+
+					.flight_details
+						:width 100%
+						:float left
+						:width 20%
+						:padding 20px 20px 100px 20px
+						+border_box
+						:text-align left
+						:margin 0
+						:position relative
+						:color white
+
+
+
+				.uld
+					:float left
+					:text-align left
+					:padding 0
+					:margin 100px 0 20px 0
+					:clear both
+					:width 100%
+					:display block
+					:position relative
+					:z-index 100
+					:height 150px
+
+					&> ul
+						:float left
+						:text-align left
+						:width 100%
+						:clear both
+						:display block
+						:position relative
+
+						&> li
+							:float left
+							:display inline-block
+							:padding 0
+							:margin 0
+							:position relative
+							:border 1px solid white
+							+prepare_animation
+							:-webkit-animation-name bounceIn
+							:-moz-animation-name bounceIn
+							:-ms-animation-name bounceIn
+							:-o-animation-name bounceIn
+							:animation-name bounceIn
+
+							@for $i from 1 through 100
+								&:nth-child(#{$i})
+									:-webkit-animation-delay #{$i/100}s
+									:-moz-animation-delay #{$i/100}s
+									:-o-animation-delay #{$i/100}s
+									:-ms-animation-delay #{$i/100}s
+									:animation-delay #{$i/100}s
+
+							.ulditem
+								:width 100%
+								:text-align center
+								:height 100%
+								:background
+									:color gray
+								:color white
+
+							&.ui-draggable-dragging
+								.ulditem
+									:background
+										:color #f125d2
+
+							// &.ui-draggable-disabled
+							// 	:margin 0	
+																		
+			
+				.aircraft
+					:width $aircraft_width
+					:height $aircraft_height
+					:margin 20px auto
+					:padding 0
+					:clear both
+					:display block
+					// :float left
+					:position relative
+					:z-index 10
+					:background
+						// :color rgba(0, 102, 255, 0.17)		
+
+					.working_area
+						:float left
+						:width 100%
+						:height 100%
+						:clear both
+						:position relative
+						:display block
+						:padding 0
+						:margin 0
+						:background
+							// :color gray
+
+						
+						.select_deck
+							:float right
+							:clear both
+							:display block
+							:text-align right
+							:position absolute
+							:top -20px
+							:right 10px
+
+							li
+								:display inline-block
+								:padding 5px
+
+						.axis
+							:clear both
+							:position absolute
+							:z-index 200
+							:top 50%
+							:left 5px
+							:right 5px
+							:background
+								:color #000
+							:height 2px
+							:margin-top -1px
+							:display none
+
+						.lowerDeck
+							:float left
+							:width 100%
+							:height 100%
+							:clear both
+							:position relative
+							:display block
+							:padding 0
+							:margin 0	
+							:z-index 200
+
+							&.workingWithA
+								.centroids
+									&.compatibilityClassB, &.compatibilityClassC, &.compatibilityClassX, &.compatibilityClassE, &.compatibilityClassF, &.compatibilityClassNA
+										:display none
+
+							&.workingWithB
+								.centroids
+									&.compatibilityClassA, &.compatibilityClassC, &.compatibilityClassX, &.compatibilityClassE, &.compatibilityClassF, &.compatibilityClassNA
+										:display none
+
+							&.workingWithC
+								.centroids
+									&.compatibilityClassA, &.compatibilityClassB, &.compatibilityClassX, &.compatibilityClassE, &.compatibilityClassF, &.compatibilityClassNA
+										:display none
+
+							&.workingWithX
+								.centroids
+									&.compatibilityClassA, &.compatibilityClassB, &.compatibilityClassC, &.compatibilityClassE, &.compatibilityClassF, &.compatibilityClassNA
+										:display none
+
+							&.workingWithE
+								.centroids
+									&.compatibilityClassA, &.compatibilityClassB, &.compatibilityClassC, &.compatibilityClassX, &.compatibilityClassF, &.compatibilityClassNA
+										:display none
+
+							&.workingWithF
+								.centroids
+									&.compatibilityClassA, &.compatibilityClassB, &.compatibilityClassC, &.compatibilityClassX, &.compatibilityClassE, &.compatibilityClassNA
+										:display none
+
+							&.workingWithNA
+								.centroids
+									&.compatibilityClassA, &.compatibilityClassB, &.compatibilityClassC, &.compatibilityClassX, &.compatibilityClassE, &.compatibilityClassF
+										:display none
+
+
+
+							.doors
+								:position absolute
+								:bottom 0
+								:right 0
+								:color white
+								:font-size 0.7em
+								:text-transform uppercase
+								:background
+									:color rgba(0,0,0,0.2)
+
+							.centroids
+								:position absolute
+								:display inline-block
+								:text-align center
+								:text-align left
+								:text-indent -5000em
+								+prepare_animation
+								:-webkit-animation-name bounceIn
+								:-moz-animation-name bounceIn
+								:-ms-animation-name bounceIn
+								:-o-animation-name bounceIn
+								:animation-name bounceIn
+
+								@for $i from 1 through 100
+									&:nth-child(#{$i})
+										:-webkit-animation-delay #{$i/100}s
+										:-moz-animation-delay #{$i/100}s
+										:-o-animation-delay #{$i/100}s
+										:-ms-animation-delay #{$i/100}s
+										:animation-delay #{$i/100}s
+
+								&.showInfo
+									:text-align left
+									:text-indent 0
+
+								$red: red
+								$green: green
+								$orange: orange
+								$gray: gray
+								$blue: blue
+								$purple: purple
+								$black: black
+								// A - 88x125
+								&.compatibilityClassA
+									:top 50%
+									:right 0
+									:border 1px dashed $red
+									:color $red
+									:z-index 90
+
+									&.toDropHere
+										:background
+											:color $red
+										:z-index 200	
+								
+								// B - 96x125
+								&.compatibilityClassB
+									:top 50%
+									:right 0
+									:border 1px dashed $green
+									:color $green
+									:z-index 90
+
+									&.toDropHere
+										:background
+											:color $green
+										:z-index 200
+								
+								// C - 60.4x61.5
+								&.compatibilityClassC
+									:right 0
+									:border 1px dashed $orange
+									:color $orange
+									:z-index 100
+
+									&.toDropHere
+										:background
+											:color $orange
+										:z-index 200
+
+								// X - 61.5x60.4
+								&.compatibilityClassX
+									:right 0
+									:border 1px dashed $gray
+									:color $gray
+									:z-index 100
+
+									&.toDropHere
+										:background
+											:color $gray
+										:z-index 200
+								
+								// E - 60.4x125
+								&.compatibilityClassE
+									:top 50%
+									:right 0
+									:border 1px dashed $blue
+									:color $blue
+									:z-index 95
+
+									&.toDropHere
+										:background
+											:color $blue
+										:z-index 200
+
+								// F - 60.4x47
+								&.compatibilityClassF
+									:top 50%
+									:right 0
+									:border 1px dashed $purple
+									:color $purple
+									:z-index 95
+
+									&.toDropHere
+										:background
+											:color $purple
+										:z-index 200
+
+								// BULK
+								&.compatibilityClassNA
+									:right 0
+									:top 50%
+									:border 1px dashed $black
+									:color $black
+									:z-index 80
+
+									&.toDropHere
+										:background
+											:color $black
+										:z-index 200
+
+								// DOORS
+								&.compatibilityClassY
+									:right 0
+									:color $black
+									:z-index 80
+									:text-align center
+									:text-indent 0
+									:height 15px
+									:border-top 3px solid $black
+									:padding-top 2px
+									:cursor default
+
+									&.toDropHere
+										:background
+											:color $black
+										:z-index 200
+
+									p
+										:text-align  center
+										:font-size 0.5em
+										:text-transform uppercase
+										:font-weight 700
+
+
+								&.uld_assigned
+									:background
+										:color white
+										:color rgba(255,255,255,0.8)
+										:image image_url(unquote("lock.png"))
+										:size 60% auto
+										:repeat no-repeat
+										:position center center
+									:z-index 250
+
+									&.toDropHere
+										:background
+											:color transparent
+
+
+								&> q
+									:position absolute
+									:top 50%
+									:left 50%
+									:margin -4px 0 0 -4px
+									:width 8px
+									:height 8px
+									+radius(20px)
+									:background
+										:color black
+									:display block
+									:text-align left
+									:text-indent -5000em
+									:overflow hidden
+									+opacity(0)
+
+
+
+
+
+
+			.inside_page
+				&.error
+					+prepare_animation
+					:-webkit-animation-name bounceIn
+					:-moz-animation-name bounceIn
+					:-ms-animation-name bounceIn
+					:-o-animation-name bounceIn
+					:animation-name bounceIn
+					:background
+						:color red	
+						:color rgba(255, 0, 0, 0.3)
+					+gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3), unquote("noiz.png"))
+					:padding-bottom 0	
+
+			.login_page
+				:height 100%
+				:background
+					:color white
+					:image image_url(unquote("logo_loginpage.png"))
+					:position 80px center
+					:repeat no-repeat
+				:text-align center
+				:padding-bottom 0px
+
+				&> form
+					:position absolute
+					:top 50%
+					:right 0%
+					:width 45%
+					:padding-right 200px
+					:margin-top -100px
+
+
+				.label, input
+					:float left
+					:text-align left
+					:color black
+					:clear both
+					:width 100%
+					:padding 0
+					:margin 3px 0
+
+				label
+					:font-weight 500
+					:font-size 0.9em
+					:line-height 100%
+
+				input[type="text"], input[type="password"]
+					:border 1px solid #dfdddd
+					:padding 10px 12px
+					:background-color white
+					:font-size 1em
+					:font-weight 500
+					:margin 2px 0 20px 0
+					+transition(all 0.2s ease-in)
+					:box-shadow 0 0 8px 0px rgba(0,0,0,0.2) inset
+
+					&:focus
+						:box-shadow 0 0 5px 0px rgba(0,0,0,0.1) inset
+
+				button
+					:float right
+					:border 0
+					:margin 10px 0
+					:width 93px
+					:height 43px
+					:line-height 43px
+					:text-align center
+					:text-transform uppercase
+					:color white
+					:font-size 1em
+					:font-weight 500
+					:background
+						:color #585756
+					+transition(all 0.2s ease-in)
+					:cursor pointer
+
+					&:hover
+						:background
+							:color darken(#585756, 8%)
+
+					&:disabled, &.disabled,
+						:cursor default
+						+opacity(0.6)
+
+						&:hover
+							:background
+								:color darken(#585756, 0%)
+
+
+
+	
+.advancedLoader
+	:display none
+	:display block
+	:width 60px
+	:height 60px
+	:position absolute
+	:z-index 1001
+	:top 50%
+	:left 50%
+	:margin -30px auto
+	:margin-top -30px
+	:margin-left -30px
+	:text-align center
+	:-webkit-animation rotate 2.0s infinite linear
+	:-moz-animation rotate 2.0s infinite linear
+	:-ms-animation rotate 2.0s infinite linear
+	:-o-animation rotate 2.0s infinite linear
+	:animation rotate 2.0s infinite linear
+	+unselectable
+	:cursor default
+
+	&:before,
+	&:after 
+		:content ''
+		:width 60%
+		:height 60%
+		:display inline-block
+		:position absolute
+		:top 0
+		:background-color $menu_red
+		+gradient($menu_red, $menu_red, unquote("noiz.png"))
+		+radius(100%)
+		:-webkit-animation bounceSmall 2.0s infinite ease-in-out
+		:-moz-animation bounceSmall 2.0s infinite ease-in-out
+		:-ms-animation bounceSmall 2.0s infinite ease-in-out
+		:-o-animation bounceSmall 2.0s infinite ease-in-out
+		:animation bounceSmall 2.0s infinite ease-in-out
+		
+
+	&:after 
+		:top auto
+		:bottom 0px
+		:-webkit-animation-delay -1s
+		:-moz-animation-delay -1s
+		:-ms-animation-delay -1s
+		:-o-animation-delay -1s
+		:animation-delay -1s
+
+
+
+.loading-overlay
+	:display block
+	:width 100%
+	:height 100%
+	:clear both
+	:position fixed
+	:z-index 4000
+	:top 0
+	:left 0
+	:right 0
+	:bottom 0
+	:background
+		:color rgba(0,0,0,0.5)
+
+
+	.loading-overlay-inner
+		:display table
+		:vertical-align middle
+		:text-align center
+		:position relative
+		:width 100%
+		:height 100%
+
+		.loading-overlay-contents
+			:display table-cell
+			:vertical-align middle
+			:padding 50px
+			:text-align center
+
+		.loading-overlay-body
+			:position relative
+			:display inline-block
+			:text-align center
+			:max-width 70%
+			:perspective 300px
+
+			&> strong
+				:margin 0 auto
+				:text-align center
+
+		.loading-overlay-symbol
+			:display block
+			:position absolute
+			:left 50%
+			:top 50%
+			:animation loading-overlay-animation-2d 4s infinite linear
+
+			&.csstransforms3d
+				:-webkit-animation block
+				:-webkit-transform-style preserve-3d
+				:-webkit-transform rotateZ(30deg)
+
+				.picto
+					:-webkit-animation loading-overlay-animation-3d 3s infinite linear
+
+
+		.picto, .picto-block
+			:position relative
+			:padding 0 15px
+
+			&:after
+				:position absolute
+				:top 50%
+				:left 50%
+				:margin-left -15px
+				:margin-top -15px
+				:font-family $swiss-piktos
+				:font-size 4em
+				:color #47423f
+				:content attr(data-icon)
+				:text-align left
+				:font-style normal
+				:font-weight normal
+				:font-variant normal
+				:text-transform none !important
+				:speak none
+				:display inline-block
+				:text-decoration none
+				:width 30px
+				:line-height 1em
+				:-webkit-font-smoothing antialiased
+
+
+		.picto
+			:display inline
+			:display -webkit-inline-box
+			:min-height 1ex
+			:max-height 1em
+			:letter-spacing 1ex
+			:text-decoration none
+			:padding 0
+
+			&:before
+				:content ''
+
+		.picto-block
+			:display inline-block
+			:vertical-align middle
+			:letter-spacing -1ex
+			:text-decoration none
+			:width 30px
+			:height 30px
+			:max-height none
+			:padding 0
+			+border_box
+
+		.picto-large
+			:padding 0 30px
+
+			&.after
+				:width 60px
+				:height 60px
+				:margin-left -30px
+				:margin-top -30px
+				:font-size 5em
+
+		.picto-gray:after
+			:color $menu_gray
+
+		.picto-orange:after
+			:color $menu_orange
+
+		.picto-blue:after
+			:color $menu_blue
+
+		.picto-green:after
+			:color $menu_green
+
+		.picto-red:after
+			:color $menu_red
+
+		.picto-white:after
+			:color white
+
+		// pictolists
+		.picto-flight:after
+			content: ""
+
+.red
+	:color red
+.green
+	:color green
+		
