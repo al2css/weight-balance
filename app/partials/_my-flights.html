@@ -6,7 +6,7 @@
 	<div class="pageis all_assigned_flights">
 		
 		<div class="flight my_list" ng-repeat="assignedflights in myFlights.flights.assigned_flights | orderBy:'departing_time'">
-			<h2><span>{{ assignedflights.from_code }} - {{ assignedflights.to_code }} <a href="javascript:;" ng-click="removeFlight(assignedflights, myFlights.flights.assigned_flights)" title="" class="remove_flight">Remove</a></span></h2>
+			<h2><span>{{ assignedflights.from_code }} - {{ assignedflights.to_code }} <small>via PLA</small> <a href="javascript:;" ng-click="removeFlight(assignedflights, myFlights.flights.assigned_flights)" title="" class="remove_flight">Remove</a></span></h2>
 			
 			<p><b>{{ assignedflights.flight_code }}</b> landing to {{ assignedflights.to_code }} {{ assignedflights.landing_time * 1000 | date:'MMM d, y HH:mm' }}</p>
 			<p class="size1"><b>{{ assignedflights.subtype }}</b></p>

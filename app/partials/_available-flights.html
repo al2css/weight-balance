@@ -11,7 +11,7 @@
 		<div class="title"><b>Closest Flights</b></div>
 
 		<div class="flight pick_list" ng-repeat="closestflights in myFlights.flights.closest_flights | orderBy:'departing_time'">
-			<h2><span>{{ closestflights.from_code }} - {{ closestflights.to_code }}</span></h2>
+			<h2><span>{{ closestflights.from_code }} - {{ closestflights.to_code }} <small>via PLA</small></span></h2>
 			
 			<p><b>{{ closestflights.flight_code }}</b> landing to {{ closestflights.to_code }} {{ closestflights.landing_time * 1000 | date:'MMM d, y HH:mm' }}</p>
 			<p class="size1"><b>{{ closestflights.subtype }}</b></p>
